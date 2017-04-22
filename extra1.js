@@ -1,7 +1,7 @@
 
 const getTime = function(location) {
   var xhttp = new XMLHttpRequest();
-      xhttp.open('GET','https://www.amdoren.com/api/timezone.php?api_key=F94KXsyk39HqytS2Y56Rgc67yb37fN&loc='+ location,false);
+      xhttp.open('GET','https://www.amdoren.com/api/timezone.php?api_key=CJmHBMBsGMDYNfG5YXkrN6LnXs8XSF&loc='+ location,false);
       xhttp.send();
       var response = JSON.parse(xhttp.responseText);
       console.log(response);
@@ -22,9 +22,7 @@ const getTime = function(location) {
 const init = function() {
   var canvases = document.getElementsByClassName('clock');
   Array.prototype.forEach.call(canvases, function(item){
-    //console.log(canvases[i].id);
     var time = getTime(item.id);
-    //console.log(time["Hour"]);
     var ctx = item.getContext("2d");
     var radius = (item.height/2);
     radius = radius * 0.90;
@@ -52,7 +50,7 @@ const drawFace = function(ctx, radius) {
   ctx.fillStyle = 'black';
   ctx.fill();
 
-  // Blue Border 
+  // black Border 
   ctx.strokeStyle = 'black';//'#bec1c6';
   ctx.lineWidth = radius*0.05;
   ctx.stroke();

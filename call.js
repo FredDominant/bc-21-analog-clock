@@ -1,10 +1,10 @@
-const time = function() {
+function time() {
 	var userInput = document.getElementById('search').value;
 	if (userInput.length < 1) {
 		alert('Text field is currently empty.');
 	} else {
 			var xhttp = new XMLHttpRequest();
-			xhttp.open('GET','https://www.amdoren.com/api/timezone.php?api_key=F94KXsyk39HqytS2Y56Rgc67yb37fN&loc='+ userInput,false);
+			xhttp.open('GET','https://www.amdoren.com/api/timezone.php?api_key=QyAk9kuf9Wwkzn54MWUFSWE6usANcR&loc='+ userInput,false);
 			xhttp.send();
 			var response = JSON.parse(xhttp.responseText);
 			var timeZone = response['timezone'];
@@ -37,7 +37,7 @@ const time = function() {
 			setInterval(drawClock,1000);
 			
 			// This function calls other functions that help draw complete clock
-			const drawClock = function() {
+			function drawClock() {
 			  drawFace(ctx, radius);
 			  printNumbers(ctx,radius);
 			  displaySecondsHand();
@@ -49,7 +49,7 @@ const time = function() {
 			 }
 
 			 // This function draws the circular face 
-			const drawFace = function(ctx, radius) {
+			function drawFace(ctx, radius) {
 			  ctx.beginPath();
 			  ctx.arc(0, 0, radius, 0, 2*Math.PI);
 			  ctx.fillStyle = 'black';
@@ -68,7 +68,7 @@ const time = function() {
 			}
 
 			// This function prints numbers on the clock's face
-			const printNumbers = function(ctx,radius) {
+			function printNumbers(ctx,radius) {
 			  var rotationAngle;
 			  ctx.font = "bolder 17px Comic Sans MS";
 			  ctx.fillStyle = 'white';
@@ -104,7 +104,7 @@ const time = function() {
 			}*/
  
  			// this function draws the seconds hand
-			 const displaySecondsHand = function() {
+			 function displaySecondsHand() {
 			 	secondsAngle = (second * Math.PI/30);
 			 	ctx.beginPath();
 			 	ctx.strokeStyle = 'red'
@@ -117,7 +117,7 @@ const time = function() {
 			 }
 
 			 // This function draws the Minutes hand
-			 const displayMinuteHand = function() {
+			 function displayMinuteHand() {
 			 	minutesAngle = (minute * Math.PI/30) +  (secondsAngle * Math.PI/(180));
 			 	ctx.beginPath();
 			 	ctx.strokeStyle = 'white';
@@ -129,8 +129,8 @@ const time = function() {
 			 	ctx.rotate(-minutesAngle);
 			}
 			 	
-			// This function draws the Hour hand
-			 const displayHourHand = function() {
+			// This function draws the Hour
+			 function displayHourHand() {
 			 	hour = hour % 12;
 			 	var hourAngle = (hour * Math.PI/6) + (minute * Math.PI/(6 * 60)) + (second * Math.PI/(360 * 60));
 				ctx.beginPath();
