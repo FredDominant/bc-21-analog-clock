@@ -8,45 +8,50 @@
 	<script type="text/javascript" src = 'call.js'></script>
   </head>
   <body >
-  	<input type = 'text' id = 'search' class ='searchBox' placeholder ='Enter value here'/>
-  	<input type = 'submit' value ="Press Me" onclick = "time();"/>
+    <p>
+    <div class = 'empty'><h1></h1></div>
+  </p>
+    <div class = 'top'>
+  	<input type = 'text' id = 'search' class ='searchBox' placeholder ='Type a city name here' class = 'box'/>
+  	<button type = 'submit' value ="Search" onclick = "time();" class = 'button'/>Search</button>
+  </div>
   	<p>
   	<div class = 'container'>
   		<p>
         <table class = 'table' align = 'center'>
-          <tr align = 'center' cellpadding = '10px'>
+          <tr align = 'center'>
             <td>
-                <p> <div class = 'nigeria' align = 'center'> <h3> current location</h3> </div> </p>
-  		        	<canvas id = "lagos" width = "210", height = "210" class = 'clock'>
+                <p> <div class = 'nigeria' align = 'center' color = 'white'> <h4>Nigeria</h4> </div> <h4>West African Time </h2> </p>
+  		        	<canvas id = "lagos" width = "210", height = "210" class ='clock'>
   			        </canvas> <br/>
             </td>
-            <td> <p> <div class = 'newYork' align = 'center'> <h3> Searched location.</h3> </div> </p>
+            <td> <p> <div class = 'newYork' align = 'center'> <h4> Searched location.</h4> </div> </p>
                <canvas align = 'right' id = "userOne" width = "210", height = "210">
                </canvas> <br/>
             </td>
-            <td> <p> <div class = 'kenya' align = 'center'> <h3> Kenya.</h3> </div> </p>
+            <td> <p> <div class = 'kenya' align = 'center'> <h4> Kenya.</h4><h4>East African Time </h4> </div> </p>
                <canvas align = 'right' id = "nairobi" width = "210", height = "210" class = 'clock'>
                </canvas>
             </td>
-            <td> <p> <div class = 'uganda' align = 'center'> <h3> Uganda.</h3> </div> </p>
-               <canvas align = 'right' id = "kampala" width = "210", height = "210"class = 'clock'>
+            <td> <p> <div class = 'uganda' align = 'center'> <h4> New York</h4> <h4>Eastern Standard Time </h4></div> </p>
+               <canvas align = 'right' id = "new york" width = "210", height = "210"class = 'clock'>
                </canvas>
             </td>
          </tr>
          <tr align ='center' cellpadding = '10px'>
-            <td> <p> <div class = 'london' align = 'center'> <h3> London, U.K</h3> </div> </p>
+            <td> <p> <div class = 'london' align = 'center'> <h4> London, U.K</h4><h4>Greenwich Mean Time </h4></div> </p>
                 <canvas id = "london" width = "210", height = "210" class="clock">
                 </canvas>  <br/>
             </td> 
-            <td> <p> <div class = 'tokyo' align = 'center'> <h3> Tokyo.</h3> </div> </p>
+            <td> <p> <div class = 'tokyo' align = 'center'> <h4> Tokyo</h4><h4>Japan Standard Time </h4> </div> </p>
                <canvas align = 'right' id = "tokyo" width = "210", height = "210" class="clock">
                </canvas>
             </td>
-            <td> <p> <div class = 'moscow' align = 'center'> <h3> Moscow</h3> </div> </p>
+            <td> <p> <div class = 'moscow' align = 'center'> <h4> Moscow</h4><h4>Moscow Time </h4></div> </p>
                <canvas align = 'right' id = "moscow" width = "210", height = "210" class = 'clock'>
                </canvas>
             </td>
-            <td> <p> <div class = 'sydney' align = 'center'> <h3> Sydney</h3> </div> </p>
+            <td> <p> <div class = 'sydney' align = 'center'> <h4> Sydney</h4><h4>Australian Eastern Time </h4> </div> </p>
                <canvas align = 'right' id = "sydney" width = "210", height = "210" class = "clock">
                </canvas>
             </td>
@@ -57,10 +62,6 @@
   	</div>
   </p>
    <script src ='extra1.js'></script>
-
-
-  
- 
   </body>
 Powered by <a href="https://www.amdoren.com">Amdoren</a>
 </html>

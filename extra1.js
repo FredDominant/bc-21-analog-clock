@@ -64,7 +64,7 @@ const drawClock = function(ctx, radius, seconds, minutes, hour) {
  
   drawFace(ctx, radius);
   printNumbers(ctx,radius);
-  showMinutes(ctx,radius);
+  //showMinutes(ctx,radius);
   displaySecondsHand(ctx, radius, seconds);
   displayMinuteHand(ctx, radius, seconds, minutes);
   displayHourHand(ctx, radius, hour, minutes, seconds);
@@ -73,11 +73,11 @@ const drawClock = function(ctx, radius, seconds, minutes, hour) {
 const drawFace = function(ctx, radius) {
   ctx.beginPath();
   ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  ctx.fillStyle = 'white';
+  ctx.fillStyle = 'black';
   ctx.fill();
 
   // Blue Border 
-  ctx.strokeStyle = '#bec1c6';
+  ctx.strokeStyle = 'black';//'#bec1c6';
   ctx.lineWidth = radius*0.05;
   ctx.stroke();
 
@@ -91,7 +91,7 @@ const drawFace = function(ctx, radius) {
 const printNumbers = function(ctx,radius) {
   var rotationAngle;
   ctx.font = "bolder 17px Comic Sans MS";
-  ctx.fillStyle = 'blue';
+  ctx.fillStyle = 'white';//'blue';
   ctx.textBaseline="middle";
   ctx.textAlign="center";
   for(var num = 1; num < 13; num++){
@@ -107,9 +107,9 @@ const printNumbers = function(ctx,radius) {
   // console.log("in printNumbers");
  }
 
- const showMinutes = function(ctx,radius) {
+ /*const showMinutes = function(ctx,radius) {
   ctx.font = "bold 7px verdana";
-  ctx.fillStyle = 'black'
+  ctx.fillStyle = 'white';//'black';
   ctx.textBaseline="middle";
   ctx.textAlign="center";
   for(var i = 0; i < 60; i++){
@@ -123,7 +123,7 @@ const printNumbers = function(ctx,radius) {
     ctx.rotate(-minutesAngle);
   }
   // console.log('in showMinutes');
- }
+ }*/
  
  const displaySecondsHand = function(ctx, radius, seconds) {
  
@@ -149,7 +149,7 @@ const printNumbers = function(ctx,radius) {
   var secondsAngle = (seconds * Math.PI/30);
   var minutesAngle = (minutes * Math.PI/30) +  (secondsAngle * Math.PI/(180));
   ctx.beginPath();
-  ctx.strokeStyle = 'black';
+  ctx.strokeStyle = 'white'; //'black';
   ctx.lineWidth = 3;
   ctx.moveTo(0,0);
   ctx.rotate(minutesAngle);
@@ -167,7 +167,7 @@ const printNumbers = function(ctx,radius) {
   hour = hour % 12
   var hourAngle = (hour * Math.PI/6) + (minutes * Math.PI/(6 * 60)) + (seconds * Math.PI/(360 * 60));
   ctx.beginPath();
-  ctx.strokeStyle = 'black';
+  ctx.strokeStyle = 'white';//'black';
   ctx.lineWidth = 3.3;
   ctx.moveTo(0,0);
   ctx.rotate(hourAngle);

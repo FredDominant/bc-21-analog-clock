@@ -4,7 +4,7 @@ function time() {
 		alert('Text field is currently empty.');
 	} else {
 			var xhttp = new XMLHttpRequest();
-			xhttp.open('GET','https://www.amdoren.com/api/timezone.php?api_key=YFKbStr4aLzjJu68dCGcgQSWHjrskL&loc='+ userInput,false);
+			xhttp.open('GET','https://www.amdoren.com/api/timezone.php?api_key=F94KXsyk39HqytS2Y56Rgc67yb37fN&loc='+ userInput,false);
 			//xhttp.setRequestHeader()
 			xhttp.send();
 			var response = JSON.parse(xhttp.responseText);
@@ -33,7 +33,7 @@ function time() {
 			function drawClock() {
 			  drawFace(ctx, radius);
 			  printNumbers(ctx,radius);
-			  showMinutes(ctx,radius);
+			  //showMinutes(ctx,radius);
 			  displaySecondsHand();
 			  displayMinuteHand();
 			  displayHourHand();
@@ -45,25 +45,25 @@ function time() {
 			function drawFace(ctx, radius) {
 			  ctx.beginPath();
 			  ctx.arc(0, 0, radius, 0, 2*Math.PI);
-			  ctx.fillStyle = 'white';
+			  ctx.fillStyle = 'black';
 			  ctx.fill();
 
 			  // Blue Border 
-			  ctx.strokeStyle = '#bec1c6';
+			  ctx.strokeStyle = 'black';
 			  ctx.lineWidth = radius*0.05;
 			  ctx.stroke();
 
 			// Midpoint
 			  ctx.beginPath();
 			  ctx.arc(0,0, radius*0.025, 0, 2*Math.PI);
-			  ctx.fillStyle = 'black';
+			  ctx.fillStyle = 'white';
 			  ctx.fill();
 			}
 
 			function printNumbers(ctx,radius) {
 			  var rotationAngle;
 			  ctx.font = "bolder 17px Comic Sans MS";
-			  ctx.fillStyle = 'blue';
+			  ctx.fillStyle = 'white';
 			  ctx.textBaseline="middle";
 			  ctx.textAlign="center";
 			  for(var num = 1; num < 13; num++) {
@@ -78,7 +78,7 @@ function time() {
 			  }
 			}
 
-			 function showMinutes(ctx,radius) {
+			 /*function showMinutes(ctx,radius) {
 			  ctx.font = "bold 7px verdana";
 			  ctx.fillStyle = 'black'
 			  ctx.textBaseline="middle";
@@ -93,7 +93,7 @@ function time() {
 			    ctx.translate(0, radius* 0.7);
 			    ctx.rotate(-minutesAngle);
 			  }
-			}
+			}*/
  
 			 function displaySecondsHand() {
 			 	//var today = new Date();
@@ -115,7 +115,7 @@ function time() {
 			 	//var minutes = today.getMinutes();
 			 	minutesAngle = (minute * Math.PI/30) +  (secondsAngle * Math.PI/(180));
 			 	ctx.beginPath();
-			 	ctx.strokeStyle = 'black';
+			 	ctx.strokeStyle = 'white';
 			 	ctx.lineWidth = 3;
 			 	ctx.moveTo(0,0);
 			 	ctx.rotate(minutesAngle);
@@ -133,7 +133,7 @@ function time() {
 			 	hour = hour % 12
 			 	var hourAngle = (hour * Math.PI/6) + (minute * Math.PI/(6 * 60)) + (second * Math.PI/(360 * 60));
 				ctx.beginPath();
-				ctx.strokeStyle = 'black';
+				ctx.strokeStyle = 'white';
 				ctx.lineWidth = 3.3;
 				ctx.moveTo(0,0);
 				ctx.rotate(hourAngle);
