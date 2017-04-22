@@ -4,12 +4,12 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset ="UTF-8">
 	<title> Timekeper... </title>
-	<script type = "text/javascript" src = 'main.js'></script>
+	<script type = "text/javascript"></script>
 	<script type="text/javascript" src = 'call.js'></script>
   </head>
   <body >
     <p>
-    <div class = 'empty'><h1></h1></div>
+    <div class = 'empty'><h1>   </h1></div>
   </p>
     <div class = 'top'>
   	<input type = 'text' id = 'search' class ='searchBox' placeholder ='Type a city name here' class = 'box'/>
@@ -20,34 +20,35 @@
   		<p>
         <table class = 'table' align = 'center'>
           <tr align = 'center'>
-            <td>
-                <p> <div class = 'nigeria' align = 'center' color = 'white'> <h4>Nigeria</h4> </div> <h4>West African Time </h2> </p>
-  		        	<canvas id = "lagos" width = "210", height = "210" class ='clock'>
-  			        </canvas> <br/>
-            </td>
-            <td> <p> <div class = 'newYork' align = 'center'> <h4> Searched location.</h4> </div> </p>
+            <td> 
+              <p> <div class = 'newYork' align = 'center'> <h4 id ='searched'><span class = 'type'>Searched location</h4> <h4 id = 'searchZone'>Time Zone</h4>  </div> </p>
                <canvas align = 'right' id = "userOne" width = "210", height = "210">
                </canvas> <br/>
             </td>
-            <td> <p> <div class = 'kenya' align = 'center'> <h4> Kenya.</h4><h4>East African Time </h4> </div> </p>
+            <td>
+                <p> <div class = 'nigeria' align = 'center' color = 'white'> <h4>Lagos/Current Location</h4> <h4>West African Time</h4> </div> </p>
+  		        	<canvas id = "lagos" width = "210", height = "210" class ='clock'>
+  			        </canvas> <br/>
+            </td>
+            <td> <p> <div class = 'kenya' align = 'center'> <h4>Nairobi</h4><h4>East African Time </h4> </div> </p>
                <canvas align = 'right' id = "nairobi" width = "210", height = "210" class = 'clock'>
                </canvas>
             </td>
-            <td> <p> <div class = 'uganda' align = 'center'> <h4> New York</h4> <h4>Eastern Standard Time </h4></div> </p>
+            <td> <p> <div class = 'uganda' align = 'center'> <h4>New York</h4> <h4>Eastern Standard Time </h4></div> </p>
                <canvas align = 'right' id = "new york" width = "210", height = "210"class = 'clock'>
                </canvas>
             </td>
          </tr>
          <tr align ='center' cellpadding = '10px'>
-            <td> <p> <div class = 'london' align = 'center'> <h4> London, U.K</h4><h4>Greenwich Mean Time </h4></div> </p>
+            <td> <p> <div class = 'london' align = 'center'> <h4>London</h4><h4>Greenwich Mean Time </h4></div> </p>
                 <canvas id = "london" width = "210", height = "210" class="clock">
                 </canvas>  <br/>
             </td> 
-            <td> <p> <div class = 'tokyo' align = 'center'> <h4> Tokyo</h4><h4>Japan Standard Time </h4> </div> </p>
+            <td> <p> <div class = 'tokyo' align = 'center'> <h4>Tokyo</h4><h4>Japan Standard Time </h4> </div> </p>
                <canvas align = 'right' id = "tokyo" width = "210", height = "210" class="clock">
                </canvas>
             </td>
-            <td> <p> <div class = 'moscow' align = 'center'> <h4> Moscow</h4><h4>Moscow Time </h4></div> </p>
+            <td> <p> <div class = 'moscow' align = 'center'> <h4>Moscow</h4><h4>Moscow Time </h4></div> </p>
                <canvas align = 'right' id = "moscow" width = "210", height = "210" class = 'clock'>
                </canvas>
             </td>

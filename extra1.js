@@ -1,9 +1,7 @@
 
 const getTime = function(location) {
-  console.log(location);
   var xhttp = new XMLHttpRequest();
-      xhttp.open('GET','https://www.amdoren.com/api/timezone.php?api_key=YFKbStr4aLzjJu68dCGcgQSWHjrskL&loc='+ location,false);
-      //xhttp.setRequestHeader()
+      xhttp.open('GET','https://www.amdoren.com/api/timezone.php?api_key=F94KXsyk39HqytS2Y56Rgc67yb37fN&loc='+ location,false);
       xhttp.send();
       var response = JSON.parse(xhttp.responseText);
       console.log(response);
@@ -23,29 +21,10 @@ const getTime = function(location) {
 
 const init = function() {
   var canvases = document.getElementsByClassName('clock');
-       // console.log(canvases);
-  
- /*for(var i = 0; i < canvases.length; i++)
-  {
-     console.log(canvases[i].id);
-     //console.log(item.id);
-    var ctx = canvases[i].getContext("2d");
-    var radius = (canvases[i].height/2);
-    radius = radius * 0.90;
-    ctx.translate(radius,radius);
-    drawClock(ctx, radius);    
-    setInterval(function(){
-       drawClock(ctx, radius);
-    }, 1000);
-  }*/
-
   Array.prototype.forEach.call(canvases, function(item){
-
-    
     //console.log(canvases[i].id);
     var time = getTime(item.id);
-
-    console.log(time["Hour"]);
+    //console.log(time["Hour"]);
     var ctx = item.getContext("2d");
     var radius = (item.height/2);
     radius = radius * 0.90;
@@ -55,13 +34,10 @@ const init = function() {
        drawClock(ctx, radius, time['Seconds'], time['Minute'], time['Hour']);
        time['Seconds']++;
     }, 1000);  
-   
-
   });
 }
 
 const drawClock = function(ctx, radius, seconds, minutes, hour) {
- 
   drawFace(ctx, radius);
   printNumbers(ctx,radius);
   //showMinutes(ctx,radius);
@@ -83,7 +59,7 @@ const drawFace = function(ctx, radius) {
 
 // Midpoint
   ctx.beginPath();
-  ctx.arc(0,0, radius*0.025, 0, 2*Math.PI);
+  ctx.arc(0,0, radius*0.05, 0, 2*Math.PI);
   ctx.fillStyle = 'black';
   ctx.fill();
 }
@@ -104,7 +80,6 @@ const printNumbers = function(ctx,radius) {
     ctx.translate(0, radius*0.85);
     ctx.rotate(-rotationAngle);
   }
-  // console.log("in printNumbers");
  }
 
  /*const showMinutes = function(ctx,radius) {
@@ -126,9 +101,6 @@ const printNumbers = function(ctx,radius) {
  }*/
  
  const displaySecondsHand = function(ctx, radius, seconds) {
- 
-  //var today = new Date();
-  //var seconds = time['Seconds'];//today.getSeconds();
   var secondsAngle = (seconds * Math.PI/30);
   ctx.beginPath();
   ctx.strokeStyle = 'red'
@@ -139,13 +111,9 @@ const printNumbers = function(ctx,radius) {
 
   ctx.stroke();
   ctx.rotate(-secondsAngle);   
-  // console.log('in displaySecondsHand');
   }
 
  const displayMinuteHand = function(ctx, radius, seconds, minutes) {
-  //var today = new Date();
- // var minutes = time['Minute'];//today.getMinutes();
- // var seconds = time['Seconds'];//today.getSeconds();
   var secondsAngle = (seconds * Math.PI/30);
   var minutesAngle = (minutes * Math.PI/30) +  (secondsAngle * Math.PI/(180));
   ctx.beginPath();
@@ -156,14 +124,9 @@ const printNumbers = function(ctx,radius) {
   ctx.lineTo(0,-radius * 0.6);
   ctx.stroke();
   ctx.rotate(-minutesAngle);
-  // console.log('in displayMinuteHand');
   }
 
  const displayHourHand = function(ctx, radius, hour, minutes, seconds) {
-  //var today = new Date();
-  //var hour = time['Hour'];//today.getHours();
-  //var minutes = time['Minute'];//today.getMinutes();
-  //var seconds = time['Seconds'];//today.getSeconds();
   hour = hour % 12
   var hourAngle = (hour * Math.PI/6) + (minutes * Math.PI/(6 * 60)) + (seconds * Math.PI/(360 * 60));
   ctx.beginPath();
@@ -174,7 +137,6 @@ const printNumbers = function(ctx,radius) {
   ctx.lineTo(0,-radius * 0.45);
   ctx.stroke();
   ctx.rotate(-hourAngle);
-  // console.log('in displayHourHand');
 }
 
  init();

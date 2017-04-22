@@ -9,11 +9,20 @@ body {
 }
 
 .button {
-	border-radius: 8px;
+	border-radius: 5px;
+	background-color: #FFF8DC;
+	color: 'white';
 }
 
 input[type=text] {
-	width:30%;
+	background-color: #FFF8DC;
+	color: 'black';
+	width: 15%;
+	margin: 8px, 0;
+	border-radius: 5px;
+}
+.type {
+	color: 'black';
 }
 /*.container {
 	background-image: url('here.jpg');
@@ -41,6 +50,7 @@ input[type=text] {
 
 table {
 	/*opacity: 0.5;*/
+	/*background-color: #D4AF37;*/
 	background-image: url('latestt.jpg');
 	/*background-repeat: no-repeat;*/
 	background-size: 100%;
