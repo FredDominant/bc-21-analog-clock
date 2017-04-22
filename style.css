@@ -1,0 +1,47 @@
+body {
+	background-color: #2f4f4f;/*rgb(169,169,169);*/
+	/*background-repeat: no-repeat;*/
+	
+}
+
+/*.container {
+	background-image: url('here.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}*/
+
+#firstOne {
+	/*background-color: #333;*/
+	border-radius: 0px;
+}
+
+#userOne {
+	border-radius: 30px;
+}
+
+.nigeria, .newYork, .kenya, .uganda, .london, .tokyo, .moscow, .sydney {
+	color: white;
+	font-family: 'Lucida Sans Unicode';
+	text-align: center;
+	font-size: 20px;
+	margin: 5px;
+}
+
+table {
+	/*opacity: 0.5;*/
+	background-size: 100%;
+	background-color: rgba(157,162,166,0.7);
+	border-radius: 0px;
+	opacity: 1.0;
+}
+ table:after{
+ 	
+ 	opacity: 0.2;
+ 	top: 0;
+ 	left: 0;
+ 	bottom: 0;
+ 	right: 0;
+ 	position: absolute;
+ 	z-index: -1;
+ }
